@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>온라인 설문 조사</title>
+</head>
+<body>
+<form id="frm" method="get" action="./pollok.do">
+<p>[가장 자신있는 개발 프로그램 언어는?]</p>
+<ol>
+<li><input type="radio" name="subject" value="HTML">HTML</li>
+<li><input type="radio" name="subject" value="JAVASCRIPT">JAVASCRIPT</li>
+<li><input type="radio" name="subject" value="JAVA">JAVA</li>
+<li><input type="radio" name="subject" value="SERVLET">SERVLET</li>
+<li><input type="radio" name="subject" value="SPRING & BOOT">SPRING & BOOT</li>
+<li><input type="radio" name="subject" value="FULL STACK">FULL STACK</li>
+</ol>
+<p>[배우고 싶은 언어는?]</p>
+<ul>
+<li><input type="checkbox" value="Linux Server" name="etc"> Linux Server</li>
+<li><input type="checkbox" value="Spring AI" name="etc"> Spring AI</li>
+<li><input type="checkbox" value="Vue" name="etc"> Vue</li>
+<li><input type="checkbox" value="Redis Database" name="etc"> Redis Database</li>
+
+</ul>
+<input type="button" value="설문조사 참여" onclick="pollok()">
+</form>
+<script>
+var pollok = function(){
+    var ob = document.getElementsByName("subject"); // 기존 코드 수정
+    var ea = ob.length;
+    var w = 0;
+    var count = 0;
+
+    while(w < ea){
+        if(ob[w].checked == true){
+            count++;
+        }
+        w++;
+    }
+
+    if(count > 0){
+       frm.submit();
+    } else {
+        alert("설문조사에 한가지 문항에 대해 답변 해주셔야 참여가 됩니다.");
+    }    
+}
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메일 응용 문제</title>
+</head>
+<body>
+<form id="frm" method="post" action="./mailok.do">
+<input type="text" placeholder="담당자 성함을 입력하세요." name="mname"><br>
+<input type="text" placeholder="회신받을 메일주소를 입력하세요." name="mmail"><br>
+<input type="text" placeholder="제목을 입력하세요." name="mtitle"><br>
+<textarea rows="10" cols="30" placeholder="내용을 입력하세요." name="mtexts"></textarea><br>
+<input type="button" value="메일 전송" onclick="mcheck()">
+</form>
+</body>
+<script>
+function mcheck() {
+	if(frm.mname.value==""){
+		alert("담당자 성함을 입력하세요.");
+	}
+	else if(frm.mmail.value==""){
+		alert("회신 받을 메일 주소를 입력하세요.");
+	}
+	else if(frm.mtitle.value==""){
+		alert("제목을 입력하세요.");
+	}
+	else if(frm.mtitle.value==""){
+		alert("제목을 입력하세요.");
+	}
+	else if(frm.mtexts.value==""){
+		alert("내용을 입력하세요.")
+	}
+	else{
+		frm.submit();		
+	}
+}
+</script>
+</html>

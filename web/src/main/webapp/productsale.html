@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 할인</title>
+</head>
+<body>
+<!-- 
+문제: 상품 할인 적용 JSP 프로그램
+사용자가 입력한 **상품 가격(price)**과 **할인 코드(discountCode)**를 이용하여 최종 결제 금액을 계산하는 JSP 페이지를 작성하시오.
+
+조건:
+사용자가 입력한 price 값(상품 가격)을 request.getAttribute("price")로 가져온다.
+사용자가 입력한 discountCode(할인 코드)를 request.getAttribute("discountCode")로 가져온다.
+할인 코드는 다음과 같은 규칙을 따른다:
+"SALE10" → 10% 할인
+"SALE20" → 20% 할인
+"VIP" → 30% 할인
+그 외의 할인 코드는 할인이 적용되지 않음
+최종 결제 금액을 계산하여 HTML에 출력한다.
+문자열 비교 시 반드시 equals()를 사용할 것.
+ -->
+ 
+<form action="./productSaleok.do" id="frm" method="post" onsubmit="return application()">
+상품 가격 : <input type="text" name="product_price" value="0"> <br>
+할인 코드 : <input type="text" name="discountCode" value="" placeholder="할인 코드를 입력하세요."> <br>
+<input type="submit" value="할인 적용">
+</form> 
+</body>
+<script>
+function application() {
+	if(frm.product_price.value == ""){
+		alert("상품 가격을 입력하세요");
+		frm.product_price.focus();
+		return false;
+	}
+	else if(frm.discountCode.value == ""){
+		alert("할인 코드를 입력하세요");
+		frm.discountCode.focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+
+	
+}
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

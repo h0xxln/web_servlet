@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Movie Part1</title>
+</head>
+<body>
+<form id="frm" method="post" action="./moviePart_2.do">
+영화 예메 시스템 <br><br>
+고객명 : <input type="text" name="mname" required><br>
+연락처 : <input type="text" name="mtel" maxlength="11" required> "-"없이 숫자만 입력<br><br>
+영화선택 : <br>
+<input type="radio" name="movie" value="히트맨2"> 히트맨2 <br>
+<input type="radio" name="movie" value="써니데이"> 써니데이 <br>
+<input type="radio" name="movie" value="부루탈리스트"> 부루탈리스트 <br>
+<input type="radio" name="movie" value="히어"> 히어 <br>
+<input type="radio" name="movie" value="하얼빈"> 하얼빈 <br><br>
+예매일자 : <input type="date" name="moviedate" required> <br><br>
+<input type="button" value="영화 예매" onclick="moviecheck()">
+</form>
+</body>
+<script>
+
+function moviecheck() {
+    var today = new Date().toISOString().split("T")[0]; // 오늘 날짜 (YYYY-MM-DD 형식)
+    /*
+    	✅ 한 줄 요약:
+		현재 날짜를 "YYYY-MM-DD" 형식의 문자열로 변환하는 코드.
+
+		간단한 동작 과정
+		new Date() → 현재 날짜와 시간 가져오기
+		.toISOString() → UTC 기준 "YYYY-MM-DDTHH:mm:ss.sssZ" 형식으로 변환`
+		.split("T") → "T" 기준으로 날짜와 시간 분리
+		[0] → 날짜(YYYY-MM-DD) 부분만 가져오기
+		📌 최종 결과 예시: "2025-02-19" (오늘 날짜)
+    */
+    
+    if (frm.mname.value == null || frm.mname.value == "" ){
+        alert("고객명을 입력하세요.");
+    }
+    else if (frm.mtel.value == null || frm.mtel.value == "") {
+        alert("전화번호를 입력하세요.");
+    }
+    else if (frm.movie.value == null) {
+        alert("영화를 선택하세요.");
+    }
+    else if (frm.moviedate.value == null || frm.moviedate.value == "") {
+        alert("예매일자를 선택하세요.");
+    }
+    else if (frm.moviedate.value < today) { // 과거 날짜 선택 방지
+        alert("오늘 기준 이후의 날짜를 설정해주세요!");
+        frm.moviedate.value = ""; // 선택한 값 초기화
+    }
+    else {
+        frm.submit();
+    }
+}
+</script>
+
+</html>
+
+
+
+

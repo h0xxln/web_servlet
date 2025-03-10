@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배송 정보 입력 시스템</title>
+</head>
+<body>
+<form id="frm" method="post" action="./delivery.do">
+<input type="hidden" name="mtel" value="">
+<input type="hidden" name="memail">
+고객명 : <input type="text" name="mname">
+이메일 : <input type="text" id="mail1">@<input type="text" id="mail2"><br>
+연락처 : <input type="text" id="tel1" maxlength="3"> - 
+<input type="text" id="tel2" maxlength="4"> - 
+<input type="text" id="tel3" maxlength="4"><br>
+주소 : <input type="text" name="maddress"> 
+<input type="button" value="배송입력" onclick="info_ok()">
+</form>
+</body>
+<script src="./delivery.js?v=1"></script>
+</html>

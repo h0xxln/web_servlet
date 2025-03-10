@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <!-- 
+ 	servlet-name : 가상의 이름이며, 동일한 이름은 사용 못함
+ 	servlet-class : package + java 클래스명
+ 	url-pattern : 해당 java 파일을 WEB에서 가상의 경로로 사용항 수 있도록 실행 
+   -->
+  
+  <display-name>web</display-name>
+ <servlet>
+ 	 <servlet-name>mailok</servlet-name>
+ 	 <servlet-class>mail.mailok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 	 <servlet-name>mailok</servlet-name>
+	 <url-pattern>/mail/mailok.do</url-pattern>
+  </servlet-mapping>	
+	
+  <servlet>
+ 	 <servlet-name>notice_view</servlet-name>
+ 	 <servlet-class>notice.notice_view</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 	 <servlet-name>notice_view</servlet-name>
+	 <url-pattern>/notice/notice_view.do</url-pattern>
+  </servlet-mapping>
+  
+	<servlet>
+ 	 <servlet-name>notice_list</servlet-name>
+ 	 <servlet-class>notice.notice_list</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 	 <servlet-name>notice_list</servlet-name>
+	 <url-pattern>/notice/notice_list.do</url-pattern>
+  </servlet-mapping>
+	
+  <servlet>
+ 	 <servlet-name>notice_writeok</servlet-name>
+ 	 <servlet-class>notice.notice_writeok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 	 <servlet-name>notice_writeok</servlet-name>
+	 <url-pattern>/notice/notice_writeok.do</url-pattern>
+  </servlet-mapping>
+  	
+  <servlet>
+ 	 <servlet-name>shop_loginok</servlet-name>
+ 	 <servlet-class>shop.shop_loginok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+ 	 <servlet-name>shop_loginok</servlet-name>
+	 <url-pattern>/shop/shop_loginok.do</url-pattern>
+  </servlet-mapping>
+  
+
+   <servlet>
+  	<servlet-name>loginok</servlet-name>
+  	<servlet-class>web.login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>loginok</servlet-name>
+ 	<url-pattern>/loginok.do</url-pattern>
+  </servlet-mapping>
+  
+  <!--  
+  <servlet>
+  	<servlet-name>payok</servlet-name>
+  	<servlet-class>web.payok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>payok</servlet-name>
+  	<url-pattern>/payok.do</url-pattern>
+  </servlet-mapping>
+  -->
+  
+ <servlet>
+ 	<servlet-name>idsearchok</servlet-name>
+ 	<servlet-class>web.idsearchok</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>idsearchok</servlet-name>
+ 	<url-pattern>/idsearch.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>productSaleok</servlet-name>
+ 	<servlet-class>web.productsale</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>productSaleok</servlet-name>
+ 	<url-pattern>/productSaleok.do</url-pattern>
+ </servlet-mapping>
+ <servlet>
+ 	<servlet-name>pollok</servlet-name>
+ 	<servlet-class>web.pollok</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>pollok</servlet-name>
+	<url-pattern>/pollok.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>upload</servlet-name>
+ <servlet-class>web.fileupload</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>upload</servlet-name>
+ <url-pattern>/fileupload.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>multifile</servlet-name>
+ <servlet-class>web.multi_file</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>multifile</servlet-name>	
+ <url-pattern>/multi_file.do</url-pattern>	
+ </servlet-mapping>
+ 
+ <servlet>
+ <servlet-name>agreeok</servlet-name>
+ <servlet-class>web.agreeok</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>agreeok</servlet-name>
+ <url-pattern>/agreeok.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>part2</servlet-name>
+ 	<servlet-class>web.part2</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>part2</servlet-name>
+	<url-pattern>/part2.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>part3</servlet-name>
+ 	<servlet-class>web.part3</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>part3</servlet-name>
+	<url-pattern>/part3.do</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ 	<servlet-name>encry</servlet-name>
+ 	<servlet-class>web.encry</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>encry</servlet-name>
+	<url-pattern>/encry.do</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+ 	<servlet-name>delivery</servlet-name>
+ 	<servlet-class>web.delivery</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>delivery</servlet-name>
+ 	<url-pattern>/delivery.do</url-pattern>
+ </servlet-mapping>
+ <!-- 
+  <servlet>
+ 	<servlet-name>encry</servlet-name>
+ 	<servlet-class>web.encry</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>encry</servlet-name>
+	<url-pattern>/encry.do</url-pattern>
+ </servlet-mapping>
+  -->
+ 
+  <servlet>
+ 	<servlet-name>payok</servlet-name>
+ 	<servlet-class>web.Basket_part3</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ 	<servlet-name>payok</servlet-name>
+	<url-pattern>/payok.do</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+	<servlet-name>mallok</servlet-name>
+	<servlet-class>web.mallok</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>mallok</servlet-name>
+	<url-pattern>/mallok.do</url-pattern>
+</servlet-mapping>
+<!-- admin이라는 실제 디렉토리가 생성되었을 경우 package에도 admin을 생성하게 됨 -->
+<servlet>
+	<servlet-name>adminok</servlet-name>
+	<servlet-class>admin.adminok</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>adminok</servlet-name>
+	<url-pattern>/admin/adminok.do</url-pattern><!-- Front경로에 맞춤 -->
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>main</servlet-name>
+	<servlet-class>admin.main</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>main</servlet-name>
+	<url-pattern>/admin/main.do</url-pattern><!-- Front경로에 맞춤 -->
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>mobileok</servlet-name>
+	<servlet-class>admin.mobileok</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>mobileok</servlet-name>
+	<url-pattern>/admin/mobileok.do</url-pattern><!-- Front경로에 맞춤 -->
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>movieok</servlet-name>
+	<servlet-class>web.moviePart_2</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>movieok</servlet-name>
+	<url-pattern>/moviePart_2.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>movie3ok</servlet-name>
+	<servlet-class>web.moviePart_3</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>movie3ok</servlet-name>
+	<url-pattern>/moviePart_3.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>session1</servlet-name>
+	<servlet-class>session.session1</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>session1</servlet-name>
+	<url-pattern>/session/session1.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>session2</servlet-name>
+	<servlet-class>session.session2</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>session2</servlet-name>
+	<url-pattern>/session/session2.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>session3</servlet-name>
+	<servlet-class>session.session3</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>session3</servlet-name>
+	<url-pattern>/session/session3.do</url-pattern>
+</servlet-mapping>
+  
+ 
+
+ 
+</web-app>
+
+
+
+
+
