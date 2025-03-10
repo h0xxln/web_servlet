@@ -4,6 +4,35 @@
 <%
 ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getAttribute("result");
 
+//페이지 번호 생성
+//10 => 11  -> 11/10 => 1.3... (ceil) => 2
+/*
+페이징 생성방법
+1. 한 페이지당 몇개씩 데이터를 출력할 것인지를 설정합니다.
+2. 데이터베이스에 있는 데이터의 총 갯수 / 한페이지당 갯수 (소수점)
+3. Math.ceil 사용하는 이유는 1.1 1.6 => 반올림으로 페이지가 추가 되도록 합니다.
+*/
+String total_page = notice.get(0).get(5);
+out.print(total_page + " ");
+int pg = 1;
+if(total_page != null || total_page.equals("")){
+	float pg2 = Integer.parseInt(total_page) / 3f;
+	pg = (int)Math.ceil(pg2);
+	//out.print(pg);
+}
+
+//get으로 page 번호 가져오는 방식
+//최초 공지사항 리스트 페이지에 접근시 페이지 번호가 없을 수 있음 또는 페이지번호가 1을 클릭했을 경우
+/*
+get page번호를 가져오는 방식
+최초 공지사항 리스트 
+*/
+String pno = request.getParameter("pageno");
+if(pno == null || pno.equals("1")){
+	pno = "1";
+}
+
+
 %>
 <!-- View -->
 <!DOCTYPE html>
@@ -13,7 +42,7 @@ ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getA
 <title>공지사항 리스트</title>
 </head>
 <body>
-<p>현재 등록된 게시물 : <%=notice.size()%>
+<p>현재 등록된 게시물 : <%=notice.get(0).get(5)%>
 <table border="1" cellpadding="0" cellspacing="0">
 <%
 
@@ -30,8 +59,10 @@ ArrayList<ArrayList<String>> notice = (ArrayList<ArrayList<String>>)request.getA
 <tbody>
 <%
 int f;
-int total = notice.size(); //리스트 출력 번호를 총 데이터 갯수로 처리
-for(f=0; f<notice.size(); f++){
+//리스트 출력 번호를 총 데이터 갯수로 처리
+//총 데잍 갯수 - ((페이지번호 - 1) * 한페이지당 출력갯수)
+int total = Integer.parseInt(total_page) - ((Integer.parseInt(pno)-1) * 3); //리스트 출력 번호를 총 데이터 갯수로 처리
+for (f = 0; f < notice.size(); f++) {
 %>
 	<tr height="30" align="center">
 		<td><%=total %></td>
@@ -45,6 +76,24 @@ total--;
 }
 %>
 </tbody>
+</table>
+<table>
+<br><br><br>
+<table border="1">
+<tr>
+<%
+	int w = 1;
+	while(w <= pg){
+%>
+
+<td width="20" height="20" align="center"><a href="./notice_list.do?pageno=<%=w%>"><%=w%></a></td>
+<%
+	w++;
+	}
+%>
+</tr>
+
+</table>
 </table>
 <script>
 	function notice_view(no) {
