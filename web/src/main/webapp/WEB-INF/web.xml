@@ -8,6 +8,16 @@
   
   <display-name>web</display-name>
   
+ <servlet>
+  	<servlet-name>ajax_postok</servlet-name>
+ 	<servlet-class>ajax.ajax_postok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ajax_postok</servlet-name>
+  	<url-pattern>/ajax/ajax_postok.do</url-pattern>
+  </servlet-mapping>
+ 
+ 
   <servlet>
   	<servlet-name>notice_delete</servlet-name>
  	<servlet-class>notice.notice_delete</servlet-class>
@@ -52,6 +62,15 @@
   <servlet-mapping>
  	 <servlet-name>notice_writeok</servlet-name>
 	 <url-pattern>/notice/notice_writeok.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>event_infook</servlet-name>
+  <servlet-class>event.event_infook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>event_infook</servlet-name>
+  <url-pattern>/event/event_infook.do</url-pattern>
   </servlet-mapping>
   	
   <servlet>

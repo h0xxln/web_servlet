@@ -3,16 +3,16 @@ function memberok(){
 	if(frm.sid.value == ""){
 		alert("아이디를 입력 후 중복체크를 하세요!");
 	}
-	else if(frm.spw.value ==""){
+	else if(frm.spw.value == ""){
 		alert("패스워드를 입력 하세요");
 	}
-	else if(frm.snm.value ==""){
+	else if(frm.snm.value == ""){
 		alert("이름 및 회사명을 입력하세요");
 	}
-	else if(frm.stel.value ==""){
+	else if(frm.stel.value == ""){
 		alert("휴대폰 및 연락처를 입력하세요");
 	}
-	else if(frm.semail.value ==""){
+	else if(frm.semail.value == ""){
 		alert("이메일을 입력을 입력하세요");
 	}
 	else{
@@ -41,9 +41,9 @@ function memberok(){
 
 function frm_view(part){
 	var sp = document.getElementById("corp");
-	//style.display : 해당 오브젝트를 웹에 출력 또는 미출력
+	//style.display : 해당 오브젝트를 웹에 출력 또는 미출력   !!
 	if(part=="C"){
-		sp.style.display = "block";
+		sp.style.display = "block";	//보여줌
 	}
 	else{
 		sp.style.display = "none";	
@@ -66,7 +66,7 @@ function ajaxpost(data){
 	//console.log(data);
 	function wck(){
 		//window.XMLHttpRequest : 현재 웹페이지에서 XHR 통신을 사용함
-		if(window.XMLHttpRequest){ //(XHR통신)
+		if(window.XMLHttpRequest){ //(XHR통신) -> true , false
 			return new XMLHttpRequest();	//신규 XHR 통신을 생성
 		}
 	}	
@@ -98,6 +98,12 @@ function ajaxpost(data){
 	//순서에 맞게 통신을 실행 역활
 	ok = wck();	//신튜 XHR 생성
 	ok.onreadystatechange = getdata;	//해당 함수 결과를 받는 설정
+	/*
+	getdata()가 아닌 getdata를 쓰는 이유:
+	getdata()라고 하면 즉시 실행되지만,
+	getdata라고 하면 브라우저가 서버 응답이 있을 때 실행할 함수를 지정하는 것임.
+	*/
+	
 	//Ajax통신규약 : POST, GET, PUT, DELETE
 	//ok.open("통신규약","Back-end 경로",true:비동기통신, false:동기통신)
 	//async : 비동기통신, sync : 동기통신

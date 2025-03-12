@@ -20,6 +20,10 @@ if(mid != null || mnm != null){	//로그인이 되어 있을 경우 다시 로�
 <title>회원 로그인</title>
 </head>
 <body>
+<!-- 
+onclick은 특정 버튼 클릭 시에만 실행되지만, 
+onsubmit은 모든 제출 시도(버튼 클릭, Enter 키 등)를 감지하고 통제할 수 있기 때문
+ -->
 <form id="frm" method="post" action="./shop_loginok.do" onsubmit="return loginck()">
 <p>[회원 로그인]</p>
 <div>
